@@ -1,14 +1,12 @@
-$(document).ready(() => {
-  const amenityNames = {};
-  const checkbox = $('li > input:checkbox');
-  checkbox.click(() => {
-    if (this.checked) {
-      amenityNames[$(this).attr('data-id')] = $(this).attr('data-name');
+$('document').ready(function () {
+  let amenitiesDict = {};
+  $('input[type="checkbox"]').change(function () {
+    if ($(this).is(':checked')) {
+      amenitiesDict[$(this).attr('data-id')] = $(this).attr('data-name');
     } else {
-      delete amenityNames[$(this).attr('data-id')];
+      delete amenitiesDict[$(this).attr('data-id')];
 	}
+    const amenitiesArray = Object.values(amenitiesDict);
+    $('.amenities h4').text(amenitiesArray.join(', '));
   });
-  const amenitiesArray = Object.values(amenityNames);
-  const h4 = $('.amenities >  h4');
-  h4.text = amenityNames.join(', ');
 });
