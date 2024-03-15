@@ -92,9 +92,20 @@ button:hover {
 }
 
 .popover ul h2{
+    display: inline;
     margin-top: 1.5%;
     margin-bottom: 5%;
     margin-left: 0px;
+}
+
+.popover ul .states-input{
+    margin-right: 10px;
+    padding: 0;
+}
+
+.popover ul .cities-input{
+    margin-right: 10px;
+    padding: 0;
 }
 
 .amenities:hover .popover,
